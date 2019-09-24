@@ -81,6 +81,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6CD81ED5233A1FEE0073DFCF /* kLineDiagram */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = kLineDiagram;
+			sourceTree = "<group>";
+		};
+		6CD81ED6233A202E0073DFCF /* common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
 		6CEC2319233A1AF7000EF4E0 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +118,8 @@
 		6CEC2324233A1AF7000EF4E0 /* improveSilently */ = {
 			isa = PBXGroup;
 			children = (
+				6CD81ED6233A202E0073DFCF /* common */,
+				6CD81ED5233A1FEE0073DFCF /* kLineDiagram */,
 				6CEC2325233A1AF7000EF4E0 /* AppDelegate.h */,
 				6CEC2326233A1AF7000EF4E0 /* AppDelegate.m */,
 				6CEC2328233A1AF7000EF4E0 /* SceneDelegate.h */,
