@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import <CoreGraphics/CoreGraphics.h>
+#import <SystemConfiguration/CaptiveNetwork.h>
 
 @interface ViewController ()
 
@@ -20,6 +22,8 @@
     
     // 两个有序数组合并
     [self reorderListMerge];
+    // 获取Mac地址
+    [self MacAddress];
 }
 
 #pragma mark - 有序数组合并
@@ -63,6 +67,24 @@
         printf("%d ", list[i]);
     }
     printf("\n");
+}
+
+#pragma mark - 获取Mac地址
+- (NSString *)MacAddress
+{
+    NSArray *ifs = CFBridgingRelease(CNCopySupportedInterfaces());
+    id info = nil;
+    for (NSString *ifnam in ifs) {
+        info = (__bridge_transfer id)CNCopyCurrentNetworkInfo((CFStringRef)ifnam);
+        if (info && [info count]) {
+            break;
+        }
+    }
+    NSDictionary *dic = (NSDictionary *)info;
+    NSString *ssid = [[dic objectForKey:@"SSID"] lowercaseString];
+    NSString *bssid = [dic objectForKey:@"BSSID"];
+    NSLog(@"ssid:%@ \nssid:%@",ssid,bssid);
+    return bssid;
 }
 
 @end
