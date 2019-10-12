@@ -22,7 +22,7 @@
     
     // 两个有序数组合并
     [self reorderListMerge];
-    // 获取Mac地址
+    // 获取MAC地址
     [self MacAddress];
 }
 
@@ -69,7 +69,7 @@
     printf("\n");
 }
 
-#pragma mark - 获取Mac地址
+#pragma mark - 获取MAC地址
 - (NSString *)MacAddress
 {
     NSArray *ifs = CFBridgingRelease(CNCopySupportedInterfaces());
